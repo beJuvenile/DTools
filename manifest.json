@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "DTools",
     "version": "0.0.1",
-    "description": "程序员开发工具",
+    "description": "程序员开发工具箱",
     "icons": {
         "16": "image/logo_16x16.png",
         "48": "image/logo_48x48.png",
