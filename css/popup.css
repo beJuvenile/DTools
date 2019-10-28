@@ -1,0 +1,44 @@
+body{
+    width: 300px;
+    margin: 0;
+    padding: 10px;
+    border: 1px red solid;
+}
+.layui-fluid{
+    padding: 0!important;
+}
+.title-info{
+    position: relative;
+}
+.title-info img{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+.title-info span:nth-child(2){
+    font-weight: bold;
+    position: absolute;
+    left: 42px;
+    top: -2px;
+    display: inline-block;
+    width: 120px;
+}
+.title-info span:nth-child(3){
+    position: absolute;
+    left: 42px;
+    top: 17px;
+    display: inline-block;
+    width: 120px;
+}
+.title-info i{
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    border: 1px solid;
+    border-radius: 15px;
+}
+.title-info span:nth-child(5){
+    position: absolute;
+    right: 0;
+    top: 4px;
+}

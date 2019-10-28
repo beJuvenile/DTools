@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "DTools",
+    "version": "0.0.1",
+    "description": "程序员开发工具",
+    "icons": {
+        "16": "image/logo_16x16.png",
+        "48": "image/logo_48x48.png",
+        "128": "image/logo_72x72.png"
+    },
+    "background": {},
+    "browser_action": {
+        "default_icon": "image/logo_48x48.png",
+        "default_title": "这是一个程序员开发工具Chrome插件",
+        "default_popup": "html/popup.html"
+    },
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "storage"
+    ],
+    "homepage_url": "https://www.cbinary.cn",
+    "chrome_url_overrides": {
+        "newtab": "html/newtab.html"
+    },
+    "options_ui": {
+        "page": "html/options.html",
+        "chrome_style": true
+    },
+    "omnibox": {
+        "keyword": "dt"
+    },
+    "devtools_page": "html/devtools.html"
+}
