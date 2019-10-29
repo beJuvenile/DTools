@@ -8,7 +8,11 @@
         "48": "image/logo_48x48.png",
         "128": "image/logo_72x72.png"
     },
-    "background": {},
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
     "browser_action": {
         "default_icon": "image/logo_48x48.png",
         "default_title": "这是一个程序员开发工具Chrome插件",
