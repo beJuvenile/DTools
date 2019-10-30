@@ -1,0 +1,46 @@
+body{
+    background: #F0F0F0;
+}
+.layui-container{
+    background: #fff;
+    text-align: center;
+}
+.title{
+    padding-top: 20px;
+}
+.title p{
+    padding: 5px 0;
+}
+.title p:first-child{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navigation{
+    text-align: left;
+}
+.navigation a{
+    cursor: pointer!important;
+}
+
+.container{
+    text-align: left;
+    padding: 25px 0;
+}
+
+.unix-timestamp label{
+    width: 260px;
+}
+.unix-timestamp .layui-word-aux{
+    padding: 4px 0!important;
+}
+.unix-timestamp-transform label{
+    width: 215px;
+}
+.date-transform label{
+    width: 215px;
+}
+
+.footer{
+    padding: 15px 0;
+}

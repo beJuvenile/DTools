@@ -1,0 +1,29 @@
+body{
+    background: #F0F0F0;
+}
+.layui-container{
+    background: #fff;
+    text-align: center;
+}
+.title{
+    padding-top: 20px;
+}
+.title p{
+    padding: 5px 0;
+}
+.title p:first-child{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tools{
+    text-align: left;
+    padding: 10px 0;
+}
+.tools tr td:nth-child(2){
+    cursor: pointer;
+}
+
+.footer{
+    padding: 15px 0;
+}
