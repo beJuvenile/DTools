@@ -9,6 +9,7 @@
     <script src="../../js/function.js"></script>
     <script src="../../js/time.js"></script>
     <script src="../../js/common.js"></script>
+    <script src="../../js/config.js"></script>
 </head>
 <body>
 <div class="layui-container">
@@ -23,42 +24,42 @@
         </span>
     </div>
     <div class="layui-row container">
-        <form class="layui-form" action="">
+        <form class="layui-form" >
             <div class="layui-form-item unix-timestamp">
                 <label class="layui-form-label" >当前Unix时间戳(Unix timestamp)是:</label>
                 <div class="layui-input-inline" style="width: 120px;">
                     <select name="timezone" lay-search>
-                        <option value="0">UTC-12:00</option>
-                        <option value="1">UTC-11:00</option>
-                        <option value="2">UTC-10:00</option>
-                        <option value="3">UTC-09:00</option>
-                        <option value="4">UTC-08:00</option>
-                        <option value="5">UTC-07:00</option>
-                        <option value="6">UTC-06:00</option>
-                        <option value="7">UTC-05:00</option>
-                        <option value="8">UTC-04:00</option>
-                        <option value="9">UTC-03:00</option>
-                        <option value="10">UTC-02:00</option>
-                        <option value="11">UTC-01:00</option>
-                        <option value="12">UTC±00:00</option>
-                        <option value="13">UTC+01:00</option>
-                        <option value="14">UTC+02:00</option>
-                        <option value="15">UTC+03:00</option>
-                        <option value="16">UTC+04:00</option>
-                        <option value="17">UTC+05:00</option>
-                        <option value="18">UTC+06:00</option>
-                        <option value="19">UTC+07:00</option>
-                        <option value="20" selected>UTC+08:00</option>
-                        <option value="21">UTC+09:00</option>
-                        <option value="22">UTC+10:00</option>
-                        <option value="23">UTC+11:00</option>
-                        <option value="0">UTC+12:00</option>
+                        <option value="Etc/GMT+12">UTC-12:00</option>
+                        <option value="Etc/GMT+11">UTC-11:00</option>
+                        <option value="Etc/GMT+10">UTC-10:00</option>
+                        <option value="Etc/GMT+9">UTC-09:00</option>
+                        <option value="Etc/GMT+8">UTC-08:00</option>
+                        <option value="Etc/GMT+7">UTC-07:00</option>
+                        <option value="Etc/GMT+6">UTC-06:00</option>
+                        <option value="Etc/GMT+5">UTC-05:00</option>
+                        <option value="Etc/GMT+4">UTC-04:00</option>
+                        <option value="Etc/GMT+3">UTC-03:00</option>
+                        <option value="Etc/GMT+2">UTC-02:00</option>
+                        <option value="Etc/GMT+1">UTC-01:00</option>
+                        <option value="Etc/GMT">UTC±00:00</option>
+                        <option value="Etc/GMT-1">UTC+01:00</option>
+                        <option value="Etc/GMT-2">UTC+02:00</option>
+                        <option value="Etc/GMT-3">UTC+03:00</option>
+                        <option value="Etc/GMT-4">UTC+04:00</option>
+                        <option value="Etc/GMT-5">UTC+05:00</option>
+                        <option value="Etc/GMT-6">UTC+06:00</option>
+                        <option value="Etc/GMT-7">UTC+07:00</option>
+                        <option value="Etc/GMT-8" selected>UTC+08:00</option>
+                        <option value="Etc/GMT-9">UTC+09:00</option>
+                        <option value="Etc/GMT-10">UTC+10:00</option>
+                        <option value="Etc/GMT-11">UTC+11:00</option>
+                        <option value="Etc/GMT-12">UTC+12:00</option>
                     </select>
                 </div>
                 <div class="layui-input-inline">
                     <input type="text" name="unix_timestamp" readonly autocomplete="off" class="layui-input">
                 </div>
-                <div class="layui-form-mid layui-word-aux">
+                <div class="layui-form-mid layui-word-aux unix-timestamp-btn">
                     <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger">暂停</button>
                     <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">开始</button>
                     <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-warm">刷新</button>
@@ -67,10 +68,10 @@
             <div class="layui-form-item unix-timestamp-transform">
                 <label class="layui-form-label">Unix时间戳(Unix timestamp)</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="unix_timestamp" required autocomplete="off" class="layui-input">
+                    <input type="text" name="unix_timestamp" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-input-inline" style="width: 70px;">
-                    <select name="unit" lay-verify="required">
+                    <select name="unit">
                         <option value="0" selected>秒</option>
                         <option value="1">毫秒</option>
                     </select>
@@ -85,7 +86,7 @@
             <div class="layui-form-item date-transform">
                 <label class="layui-form-label">时间(年-月-日 时:分:秒)</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="date" required autocomplete="off" class="layui-input">
+                    <input type="text" name="date" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-input-inline" style="width: 45px; padding: 4px 0;">
                     <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">转换</button>
@@ -97,7 +98,7 @@
             <div class="layui-form-item date-transform">
                 <label class="layui-form-label">时间</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="custom_date" id="custom-date" required autocomplete="off" class="layui-input">
+                    <input type="text" name="custom_date" id="custom-date" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-input-inline" style="width: 45px; padding: 4px 0;">
                     <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal">转换</button>
