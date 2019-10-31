@@ -1,53 +1,27 @@
 
-layui.use(['element','form','laydate','jquery'], function () {
+layui.use(['element','form','jquery'], function () {
     let element = layui.element
         ,form = layui.form
-        ,laydate = layui.laydate
-        ,$ = layui.jquery
-        ,interval = null
-        ,pause = false;
-
-    laydate.render({
-        elem: '#custom-date'
-        ,type: 'datetime'
-        ,format: 'yyyy-MM-dd HH:mm:ss'
-        ,calendar: true
-    });
+        ,$ = layui.jquery;
 
     /*附上button提交表单*/
     $("form").on('submit', function (e) {
         e.preventDefault();
     });
 
-    $(".unix-timestamp-btn .layui-btn:nth-child(1)").click(function () {
-        pause = true;
-    });
-    $(".unix-timestamp-btn .layui-btn:nth-child(2)").click(function () {
-        pause = false;
-    });
-    $(".unix-timestamp-btn .layui-btn:nth-child(3)").click(function () {
-        refreshUnixTimestamp();
-    });
-    
-    interval = setInterval(function () {
-        if (!pause) {
-            refreshUnixTimestamp();
-        }
-    }, 1000);
-
-    $(".unix-timestamp-transform .layui-btn").click(function () {
-        let timezone = $(".timezone select[name='timezone']").val()
-            ,timestamp = $(".unix-timestamp-transform input[name='unix_timestamp']").val()
-            ,unit = $(".unix-timestamp-transform select[name='unit']").val();
+    $(".layui-btn").click(function () {
+        let type = $(this).attr('data-type')
+            ,charset = $("select[name='charset']").val()
+            ,txt = $("textarea[name='txt']").val();
 
         $.ajax({
-            url: gateway + '/api/v1/timestamp/format'
-            ,data: {timezone:timezone,timestamp:timestamp,unit:unit}
-            ,type: 'GET'
+            url: gateway + '/api/v1/base64'
+            ,data: {type:type,charset:charset,txt:txt}
+            ,type: 'POST'
             ,async: true
             ,success: function(res){
                 if (res.code===0) {
-                    $(".unix-timestamp-transform").find("input[name='unix_timestamp_format']").val(res.data.date_format)
+                    $("textarea[name='txt_dec']").val(res.data.txt_dec)
                 } else {
                     layer.alert(res.msg, {icon: 2, shade:0});
                 }
@@ -57,7 +31,7 @@ layui.use(['element','form','laydate','jquery'], function () {
             }
         });
     });
-
+/*
     $(".date-transform .layui-btn").click(function () {
         let timezone = $(".timezone select[name='timezone']").val()
             ,date = $(".date-transform input[name='date']").val();
@@ -123,5 +97,5 @@ layui.use(['element','form','laydate','jquery'], function () {
         });
     }
     
-    
+    */
 });

@@ -27,26 +27,11 @@ body{
     text-align: left;
     padding: 25px 0;
 }
-
-.timezone label{
-    width: 435px;
+.container .layui-input-block{
+    margin-left: 0;
 }
-
-.unix-timestamp label{
-    width: 260px;
-}
-.unix-timestamp .layui-word-aux{
-    padding: 4px 0!important;
-}
-.unix-timestamp-transform label{
-    width: 215px;
-}
-.date-transform label{
-    width: 215px;
-}
-
-.custom-date-transform label{
-    width: 215px;
+.container .layui-input-inline{
+    margin-top: 5px;
 }
 
 .footer{

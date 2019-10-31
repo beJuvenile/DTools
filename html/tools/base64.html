@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DTools - Unix时间转换</title>
+    <link rel="stylesheet" href="../../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/base64.css">
+    <script src="../../libs/layui/layui.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/base64.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/config.js"></script>
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row title">
+        <p>DTools - 程序员开发工具箱 <sup>(v0.0.1)</sup></p>
+        <p>人生若只如初见，何事西风悲画扇。</p>
+    </div>
+    <div class="layui-row navigation">
+        <span class="layui-breadcrumb">
+            <a data-link="html/home.html">主面板</a>
+            <a><cite>Base64编解码</cite></a>
+        </span>
+    </div>
+    <div class="layui-row container">
+        <form class="layui-form" >
+            <div class="layui-form-item" style="margin-bottom: 0;">
+                <div class="layui-input-block">
+                    <textarea name="txt" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item" style="margin-bottom: 0;">
+                <div class="layui-form-mid layui-word-aux">
+                    <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal" data-type="0">解码</button>
+                    <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger" data-type="1">编码</button>
+                </div>
+                <div class="layui-input-inline">
+                    <select name="charset" lay-search>
+                        <option value="UTF-8" selected>当前字符集：UTF-8</option>
+                        <option value="GB2312">当前字符集：GB2312</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <textarea name="txt_dec" readonly class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="layui-row footer">
+        &copy;2019 <a href="http://www.cbinary.cn" target="_blank">风雪之詩</a>
+    </div>
+</div>
+</body>
+</html>

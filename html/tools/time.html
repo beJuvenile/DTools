@@ -25,37 +25,40 @@
     </div>
     <div class="layui-row container">
         <form class="layui-form" >
-            <div class="layui-form-item unix-timestamp">
-                <label class="layui-form-label" >当前Unix时间戳(Unix timestamp)是:</label>
-                <div class="layui-input-inline" style="width: 120px;">
+            <div class="layui-form-item timezone">
+                <label class="layui-form-label" >&nbsp;</label>
+                <div class="layui-input-inline" style="width: 195px;">
                     <select name="timezone" lay-search>
-                        <option value="Etc/GMT+12">UTC-12:00</option>
-                        <option value="Etc/GMT+11">UTC-11:00</option>
-                        <option value="Etc/GMT+10">UTC-10:00</option>
-                        <option value="Etc/GMT+9">UTC-09:00</option>
-                        <option value="Etc/GMT+8">UTC-08:00</option>
-                        <option value="Etc/GMT+7">UTC-07:00</option>
-                        <option value="Etc/GMT+6">UTC-06:00</option>
-                        <option value="Etc/GMT+5">UTC-05:00</option>
-                        <option value="Etc/GMT+4">UTC-04:00</option>
-                        <option value="Etc/GMT+3">UTC-03:00</option>
-                        <option value="Etc/GMT+2">UTC-02:00</option>
-                        <option value="Etc/GMT+1">UTC-01:00</option>
-                        <option value="Etc/GMT">UTC±00:00</option>
-                        <option value="Etc/GMT-1">UTC+01:00</option>
-                        <option value="Etc/GMT-2">UTC+02:00</option>
-                        <option value="Etc/GMT-3">UTC+03:00</option>
-                        <option value="Etc/GMT-4">UTC+04:00</option>
-                        <option value="Etc/GMT-5">UTC+05:00</option>
-                        <option value="Etc/GMT-6">UTC+06:00</option>
-                        <option value="Etc/GMT-7">UTC+07:00</option>
-                        <option value="Etc/GMT-8" selected>UTC+08:00</option>
-                        <option value="Etc/GMT-9">UTC+09:00</option>
-                        <option value="Etc/GMT-10">UTC+10:00</option>
-                        <option value="Etc/GMT-11">UTC+11:00</option>
-                        <option value="Etc/GMT-12">UTC+12:00</option>
+                        <option value="Etc/GMT+12">当前时区：UTC-12:00</option>
+                        <option value="Etc/GMT+11">当前时区：UTC-11:00</option>
+                        <option value="Etc/GMT+10">当前时区：UTC-10:00</option>
+                        <option value="Etc/GMT+9">当前时区：UTC-09:00</option>
+                        <option value="Etc/GMT+8">当前时区：UTC-08:00</option>
+                        <option value="Etc/GMT+7">当前时区：UTC-07:00</option>
+                        <option value="Etc/GMT+6">当前时区：UTC-06:00</option>
+                        <option value="Etc/GMT+5">当前时区：UTC-05:00</option>
+                        <option value="Etc/GMT+4">当前时区：UTC-04:00</option>
+                        <option value="Etc/GMT+3">当前时区：UTC-03:00</option>
+                        <option value="Etc/GMT+2">当前时区：UTC-02:00</option>
+                        <option value="Etc/GMT+1">当前时区：UTC-01:00</option>
+                        <option value="Etc/GMT">当前时区：UTC±00:00</option>
+                        <option value="Etc/GMT-1">当前时区：UTC+01:00</option>
+                        <option value="Etc/GMT-2">当前时区：UTC+02:00</option>
+                        <option value="Etc/GMT-3">当前时区：UTC+03:00</option>
+                        <option value="Etc/GMT-4">当前时区：UTC+04:00</option>
+                        <option value="Etc/GMT-5">当前时区：UTC+05:00</option>
+                        <option value="Etc/GMT-6">当前时区：UTC+06:00</option>
+                        <option value="Etc/GMT-7">当前时区：UTC+07:00</option>
+                        <option value="Etc/GMT-8" selected>当前时区：UTC+08:00</option>
+                        <option value="Etc/GMT-9">当前时区：UTC+09:00</option>
+                        <option value="Etc/GMT-10">当前时区：UTC+10:00</option>
+                        <option value="Etc/GMT-11">当前时区：UTC+11:00</option>
+                        <option value="Etc/GMT-12">当前时区：UTC+12:00</option>
                     </select>
                 </div>
+            </div>
+            <div class="layui-form-item unix-timestamp">
+                <label class="layui-form-label" >当前Unix时间戳(Unix timestamp)是:</label>
                 <div class="layui-input-inline">
                     <input type="text" name="unix_timestamp" readonly autocomplete="off" class="layui-input">
                 </div>
@@ -95,8 +98,8 @@
                     <input type="text" name="date_format" autocomplete="off" class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item date-transform">
-                <label class="layui-form-label">时间</label>
+            <div class="layui-form-item custom-date-transform">
+                <label class="layui-form-label">自定义时间</label>
                 <div class="layui-input-inline">
                     <input type="text" name="custom_date" id="custom-date" autocomplete="off" class="layui-input">
                 </div>
