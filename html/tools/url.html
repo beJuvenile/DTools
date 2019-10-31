@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DTools - Base64编解码</title>
+    <title>DTools - URL编解码</title>
     <link rel="stylesheet" href="../../libs/layui/css/layui.css">
-    <link rel="stylesheet" href="../../css/base64.css">
+    <link rel="stylesheet" href="../../css/url.css">
     <script src="../../libs/layui/layui.js"></script>
     <script src="../../js/function.js"></script>
-    <script src="../../js/base64.js"></script>
+    <script src="../../js/url.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/config.js"></script>
 </head>
@@ -20,7 +20,7 @@
     <div class="layui-row navigation">
         <span class="layui-breadcrumb">
             <a data-link="html/home.html">主面板</a>
-            <a><cite>Base64编解码</cite></a>
+            <a><cite>URL编解码</cite></a>
         </span>
     </div>
     <div class="layui-row container">
@@ -35,10 +35,9 @@
                     <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal" data-type="0">解码</button>
                     <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger" data-type="1">编码</button>
                 </div>
-                <div class="layui-input-inline">
-                    <select name="charset" lay-search>
-                        <option value="UTF-8" selected>当前字符集：UTF-8</option>
-                        <option value="GB2312">当前字符集：GB2312</option>
+                <div class="layui-input-inline" style="width: 285px;">
+                    <select name="language" lay-search>
+                        <option value="PHP" selected>当前方法：urlencode/urldecode(PHP)</option>
                     </select>
                 </div>
             </div>

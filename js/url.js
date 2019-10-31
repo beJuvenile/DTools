@@ -11,12 +11,12 @@ layui.use(['element','form','jquery'], function () {
 
     $(".layui-btn").click(function () {
         let type = $(this).attr('data-type')
-            ,charset = $("select[name='charset']").val()
+            ,language = $("select[name='language']").val()
             ,txt = $("textarea[name='txt']").val();
 
         $.ajax({
-            url: gateway + '/api/v1/base64'
-            ,data: {type:type,charset:charset,txt:txt}
+            url: gateway + '/api/v1/url'
+            ,data: {type:type,language:language,txt:txt}
             ,type: 'POST'
             ,async: true
             ,success: function(res){

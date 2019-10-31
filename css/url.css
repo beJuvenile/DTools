@@ -1,0 +1,39 @@
+body{
+    background: #F0F0F0;
+}
+.layui-container{
+    background: #fff;
+    text-align: center;
+}
+.title{
+    padding-top: 20px;
+}
+.title p{
+    padding: 5px 0;
+}
+.title p:first-child{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navigation{
+    text-align: left;
+}
+.navigation a{
+    cursor: pointer!important;
+}
+
+.container{
+    text-align: left;
+    padding: 25px 0;
+}
+.container .layui-input-block{
+    margin-left: 0;
+}
+.container .layui-input-inline{
+    margin-top: 5px;
+}
+
+.footer{
+    padding: 15px 0;
+}
