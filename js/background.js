@@ -27,7 +27,6 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
 
 // 当用户接收关键字建议时触发
 chrome.omnibox.onInputEntered.addListener((text) => {
-    console.log('inputEntered: ' + text);
 
     if (!text) return;
     if (text.startsWith('home')) {
