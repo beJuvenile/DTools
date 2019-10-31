@@ -34,6 +34,8 @@ chrome.omnibox.onInputEntered.addListener((text) => {
         openUrlCurrentTab(chrome.runtime.getURL('html/home.html'));
     } else if (text.startsWith('time')) {
         openUrlCurrentTab(chrome.runtime.getURL('html/tools/time.html'));
+    } else if (text.startsWith('base64')) {
+        openUrlCurrentTab(chrome.runtime.getURL('html/tools/base64.html'));
     }
 
     return;
