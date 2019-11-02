@@ -13,26 +13,11 @@ layui.use(['element','form','jquery'], function () {
     });
 
     $(".layui-btn").click(function () {
-        let type = $(this).attr('data-type')
-            ,language = $("select[name='language']").val()
-            ,txt = $("textarea[name='txt']").val();
+        ip = $(".layui-form input[name='ip']").val();
 
-        $.ajax({
-            url: gateway + '/api/v1/url'
-            ,data: {type:type,language:language,txt:txt}
-            ,type: 'POST'
-            ,async: true
-            ,success: function(res){
-                if (res.code===0) {
-                    $("textarea[name='txt_dec']").val(res.data.txt_dec)
-                } else {
-                    layer.alert(res.msg, {icon: 2, shade:0});
-                }
-            }
-            ,error: function () {
-                layer.alert('网络错误', {icon: 2, shade:0});
-            }
-        });
+        tbIpInfo();
+        ddIpInfo();
+        iaIpInfo();
     });
 
 
@@ -53,27 +38,82 @@ layui.use(['element','form','jquery'], function () {
         });
     })();
     localIpInterval = setInterval(function () {
-        if (typeof returnCitySN !== "undefined") {
-            $(".container .layui-form input[name='ip']").val(returnCitySN['cip']);
-            ip = returnCitySN['cip'];
+        if (ip) {
+            $(".container .layui-form input[name='ip']").val(ip);
             clearInterval(localIpInterval);
 
             tbIpInfo();
+            ddIpInfo();
+            iaIpInfo();
         }
     }, 500);
     
     /*淘宝*/
     function tbIpInfo() {
         $.ajax({
-            url: 'http://ip.taobao.com/service/getIpInfo.php'
+            url: gateway + '/api/v1/tb/ip/check'
             ,data: {ip:ip}
             ,type: 'GET'
             ,async: true
             ,success: function(res){
                 if (res.code===0) {
-                    $(".tb td:nth-child(3)").html(res.data.country);
-                    $(".tb td:nth-child(4)").html(res.data.region + ' ' + res.data.city + ' ' + res.data.county);
-                    $(".tb td:nth-child(5)").html(res.data.isp);
+                    let data = res.data.info;
+
+                    $(".tb td:nth-child(2) a").attr({'href': 'http://ip.taobao.com/service/getIpInfo.php?ip=' + ip, 'target': '_blank'});
+                    $(".tb td:nth-child(3)").html(data.country);
+                    $(".tb td:nth-child(4)").html(data.region + ' ' + data.city + ' ' + data.county);
+                    $(".tb td:nth-child(5)").html(data.isp);
+                } else {
+                    layer.alert(res.msg, {icon: 2, shade:0});
+                }
+            }
+            ,error: function () {
+                layer.alert('网络错误', {icon: 2, shade:0});
+            }
+        });
+    }
+
+    /*当当*/
+    function ddIpInfo() {
+        $.ajax({
+            url: gateway + '/api/v1/dd/ip/check'
+            ,data: {ip:ip}
+            ,type: 'GET'
+            ,async: true
+            ,success: function(res){
+                if (res.code===0) {
+                    let data = res.data.info;
+
+                    $(".dangdang td:nth-child(2) a").attr({'href': 'http://iplookup.dangdang.com/?format=json&ip=' + ip, 'target': '_blank'});
+                    $(".dangdang td:nth-child(3)").html(data.Loc[0]);
+                    $(".dangdang td:nth-child(4)").html(data.Loc[1] + ' ' + data.Loc[2] + ' ' + data.Loc[3]);
+                } else {
+                    layer.alert(res.msg, {icon: 2, shade:0});
+                }
+            }
+            ,error: function () {
+                layer.alert('网络错误', {icon: 2, shade:0});
+            }
+        });
+    }
+
+    /*IP-API*/
+    function iaIpInfo() {
+        $.ajax({
+            url: gateway + '/api/v1/ia/ip/check'
+            ,data: {ip:ip}
+            ,type: 'GET'
+            ,async: true
+            ,success: function(res){
+                if (res.code===0) {
+                    let data = res.data.info;
+
+                    $(".ip-api td:nth-child(2) a").attr({'href': 'http://ip-api.com/json/' + ip, 'target': '_blank'});
+                    $(".ip-api td:nth-child(3)").html(data.country);
+                    $(".ip-api td:nth-child(4)").html(data.regionName + ' ' + data.city);
+                    $(".ip-api td:nth-child(5)").html(data.isp);
+                    $(".ip-api td:nth-child(6)").html(data.lat + ',' + data.lon);
+                    $(".ip-api td:nth-child(7)").html(data.org);
                 } else {
                     layer.alert(res.msg, {icon: 2, shade:0});
                 }
