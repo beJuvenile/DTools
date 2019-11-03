@@ -39,6 +39,10 @@ chrome.omnibox.onInputEntered.addListener((text) => {
         openUrlCurrentTab(chrome.runtime.getURL('html/tools/url.html'));
     } else if (text.startsWith('ip')) {
         openUrlCurrentTab(chrome.runtime.getURL('html/tools/ip.html'));
+    } else if (text.startsWith('serialize')) {
+        openUrlCurrentTab(chrome.runtime.getURL('html/tools/serialize.html'));
+    } else if (text.startsWith('json')) {
+        openUrlCurrentTab(chrome.runtime.getURL('html/tools/json.html'));
     }
 
     return;
