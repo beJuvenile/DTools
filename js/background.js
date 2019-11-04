@@ -43,6 +43,8 @@ chrome.omnibox.onInputEntered.addListener((text) => {
         openUrlCurrentTab(chrome.runtime.getURL('html/tools/serialize.html'));
     } else if (text.startsWith('json')) {
         openUrlCurrentTab(chrome.runtime.getURL('html/tools/json.html'));
+    } else if (text.startsWith('md5')) {
+        openUrlCurrentTab(chrome.runtime.getURL('html/tools/md5.html'));
     }
 
     return;
